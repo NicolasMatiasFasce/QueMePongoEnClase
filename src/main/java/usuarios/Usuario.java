@@ -3,6 +3,7 @@ package usuarios;
 import atuendos.Atuendo;
 import atuendos.RepositorioDeUniformes;
 import guardarropas.Guardarropas;
+import prendas.Prenda;
 import prendas.PrendaBuilder;
 import prendas.categorias.Categoria;
 
@@ -30,6 +31,10 @@ public class Usuario {
     public PrendaBuilder crearPrendaDeCategoria(Categoria categoria) {
         this.borradorDeUltimaPrenda = new PrendaBuilder(categoria);
         return borradorDeUltimaPrenda;
+    }
+
+    public void agregarPrendaAGuardarropas(Prenda prenda) {
+        guardarropas.agregarPrenda(prenda);
     }
 
     public Atuendo generarSugerencia(String ciudad) {

@@ -8,21 +8,21 @@ import java.util.Set;
 
 public class AdministradorDeProveedoresDeClima {
 
-    private Set<IProveedorClima> proveedores = new HashSet<>();
+    private Set<ProveedorClima> proveedores = new HashSet<>();
 
     public AdministradorDeProveedoresDeClima() {
         this.proveedores.add(new ProveedorAccuWeather());
     }
 
     public Integer obtenerTemperaturaActual(String ciudad) {
-        IProveedorClima proveedorEncontrado = encontrarPrimerProveedorFuncional();
+        ProveedorClima proveedorEncontrado = encontrarPrimerProveedorFuncional();
         return proveedorEncontrado.obtenerTemperaturaActual(ciudad);
     }
 
-    public IProveedorClima encontrarPrimerProveedorFuncional() {
-        IProveedorClima proveedorEncontrado = proveedores
+    private ProveedorClima encontrarPrimerProveedorFuncional() {
+        ProveedorClima proveedorEncontrado = proveedores
                 .stream()
-                .filter(IProveedorClima::estaActivo)
+                .filter(ProveedorClima::estaActivo)
                 .findFirst()
                 .orElse(null);
         if (proveedorEncontrado == null)
@@ -30,7 +30,7 @@ public class AdministradorDeProveedoresDeClima {
         return proveedorEncontrado;
     }
 
-    public void agregarProveedor(IProveedorClima proveedorNuevo) {
+    public void agregarProveedor(ProveedorClima proveedorNuevo) {
         proveedores.add(proveedorNuevo);
     }
 }

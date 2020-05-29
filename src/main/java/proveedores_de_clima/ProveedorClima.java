@@ -1,6 +1,6 @@
 package proveedores_de_clima;
 
-public interface IProveedorClima {
+public interface ProveedorClima {
     Integer obtenerTemperaturaActual(String ciudad);
 
     Boolean estaActivo();

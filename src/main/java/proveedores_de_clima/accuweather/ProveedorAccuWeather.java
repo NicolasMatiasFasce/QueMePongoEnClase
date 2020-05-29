@@ -1,7 +1,7 @@
 package proveedores_de_clima.accuweather;
 
 import excepciones.UnidadDeTemperaturaDesconocidaException;
-import proveedores_de_clima.IProveedorClima;
+import proveedores_de_clima.ProveedorClima;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 import static java.lang.String.format;
 
-public class ProveedorAccuWeather implements IProveedorClima {
+public class ProveedorAccuWeather implements ProveedorClima {
 
     private AccuWeatherAPI accuWeatherAPI = new AccuWeatherAPI();
 
