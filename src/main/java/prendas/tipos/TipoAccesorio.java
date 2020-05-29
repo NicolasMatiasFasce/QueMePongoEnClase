@@ -10,7 +10,7 @@ import java.util.List;
 public class TipoAccesorio extends TipoPrenda {
 
     private TipoAccesorio(List<Material> materiales) {
-        this.materiales = materiales;
+        this.materialesValidos = materiales;
     }
 
     public static final TipoAccesorio RELOJ = new TipoAccesorio(Arrays.asList(Material.METAL, Material.GOMA, Material.CUERO));

@@ -9,7 +9,7 @@ import java.util.List;
 public class TipoParteSuperior extends TipoPrenda {
 
     private TipoParteSuperior(List<Material> materiales, Integer temperaturaLimite) {
-        this.materiales = materiales;
+        this.materialesValidos = materiales;
         this.temperaturaLimite = temperaturaLimite;
     }
 

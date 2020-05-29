@@ -10,7 +10,7 @@ import java.util.List;
 public class TipoCalzado extends TipoPrenda {
 
 	private TipoCalzado(List<Material> materiales, Integer temperaturaLimite) {
-		this.materiales = materiales;
+		this.materialesValidos = materiales;
 		this.temperaturaLimite = temperaturaLimite;
 	}
 

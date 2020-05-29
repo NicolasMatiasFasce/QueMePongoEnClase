@@ -7,7 +7,7 @@ import java.util.List;
 
 public abstract class TipoPrenda {
 
-    protected List<Material> materiales;
+    protected List<Material> materialesValidos;
 
     protected Integer temperaturaLimite;
 
@@ -15,7 +15,7 @@ public abstract class TipoPrenda {
     }
 
     public List<Material> materialesValidos() {
-        return this.materiales;
+        return this.materialesValidos;
     }
 
     public Integer temperaturaLimite() {

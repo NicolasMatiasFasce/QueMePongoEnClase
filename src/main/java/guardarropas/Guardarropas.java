@@ -43,7 +43,7 @@ public class Guardarropas {
         return prendas.stream().filter(prenda -> prenda.getCategoria() == Categoria.ACCESORIO).collect(Collectors.toSet());
     }
 
-    public Atuendo obtenerAtuendoRandom(List<Atuendo> combinaciones) {
+    private Atuendo obtenerAtuendoRandom(List<Atuendo> combinaciones) {
         Collections.shuffle(combinaciones);
         return combinaciones.get(0);
     }
