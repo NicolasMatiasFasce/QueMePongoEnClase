@@ -17,7 +17,7 @@ public class Sugeridor {
 		return prenda.getTipo().temperaturaLimite() > temperatura;
 	}
 
-	public List<Atuendo> atuendosValidosParaAhora(Integer temperatura, Guardarropas guardarropas) {
+	public List<Atuendo> atuendosValidosParaTemperatura(Integer temperatura, Guardarropas guardarropas) {
 		Set<Prenda> calzados = guardarropas.obtenerCalzados().stream()
 				.filter(prenda -> this.prendaEsValidaParaTemperatura(prenda, temperatura))
 				.collect(Collectors.toSet());

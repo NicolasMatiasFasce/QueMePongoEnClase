@@ -49,7 +49,7 @@ public class Guardarropas {
     }
 
     public List<Atuendo> atuendosValidos(String ciudad) {
-        return sugeridor.atuendosValidosParaAhora(administradorDeProveedores.obtenerTemperaturaActual(ciudad), this);
+        return sugeridor.atuendosValidosParaTemperatura(administradorDeProveedores.obtenerTemperaturaActual(ciudad), this);
     }
 
     public Atuendo generarSugerencia(String ciudad) {
