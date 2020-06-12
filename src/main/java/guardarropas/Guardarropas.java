@@ -2,6 +2,7 @@ package guardarropas;
 
 import atuendos.Atuendo;
 import atuendos.Sugeridor;
+import excepciones.PrendaNoEncontradaException;
 import prendas.Prenda;
 import prendas.categorias.Categoria;
 import proveedores_de_clima.AdministradorDeProveedoresDeClima;
@@ -54,6 +55,16 @@ public class Guardarropas {
 
     public Atuendo generarSugerencia(String ciudad) {
         return this.obtenerAtuendoRandom(atuendosValidos(ciudad));
+    }
+
+    public void quitarPrenda(Prenda prenda) {
+
+        boolean remove = prendas.remove(prenda);
+
+        if (!remove) {
+            throw new PrendaNoEncontradaException("La prenda a eliminar no se encuentra en el guardarrolas");
+        }
+
     }
 
 }
