@@ -1,6 +1,7 @@
 package usuarios;
 
 import Modificacion.Modificacion;
+import alerta.Alerta;
 import atuendos.Atuendo;
 import atuendos.RepositorioDeUniformes;
 import guardarropas.Guardarropas;
@@ -32,11 +33,19 @@ public class Usuario {
     public Usuario(String email, List<Guardarropas> guardarropas) {
         this.email = email;
         this.guardarropas = guardarropas;
+
+        RepoDeUsuarios.getInstance().agregarUsuario(this);
+    }
+
+    public void alertar(Alerta alerta) {
+        // ???
     }
 
     public Usuario(String email, Guardarropas guardarropas) {
         this.email = email;
         this.guardarropas = Collections.singletonList(guardarropas);
+
+        RepoDeUsuarios.getInstance().agregarUsuario(this);
     }
 
     public PrendaBuilder crearPrendaDeCategoria(Categoria categoria) {
